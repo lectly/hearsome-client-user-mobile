@@ -1,19 +1,20 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 
 import '../home/homepage.dart';
 
 
-class splashScreen extends StatefulWidget {
-  const splashScreen({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  _splashScreenState createState() => _splashScreenState();
+  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _splashScreenState extends State<splashScreen> {
+class _SplashScreenState extends State<SplashScreen> {
 
    @override
    void initState() {
@@ -38,7 +39,7 @@ class _splashScreenState extends State<splashScreen> {
                 ),
                 const Text("hearsome",textAlign:TextAlign.center,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.primaryColor,
                     fontFamily: "Cairo",
                     fontSize: 24.0,
                   ),
@@ -46,8 +47,8 @@ class _splashScreenState extends State<splashScreen> {
               ],
             ),
 
-            const CircularProgressIndicator(
-              valueColor:  AlwaysStoppedAnimation<Color>(Colors.white60),
+             const CircularProgressIndicator(
+              valueColor:  AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
             ),
           ],
         ),
