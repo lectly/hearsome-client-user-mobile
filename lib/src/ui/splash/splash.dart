@@ -1,11 +1,9 @@
 import 'dart:async';
+import '../home/homepage.dart';
 
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
-
-import '../home/homepage.dart';
-
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,14 +13,13 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-   @override
-   void initState() {
-  //   // TODO: implement initState
-  //   super.initState();
-  //   Timer(const Duration(seconds: 5), (){
-  //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const homePage()));
-  //  });
+  @override
+  void initState() {
+    //   // TODO: implement initState
+    //   super.initState();
+    //   Timer(const Duration(seconds: 5), (){
+    //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const homePage()));
+    //  });
   }
   @override
   Widget build(BuildContext context) {
@@ -30,40 +27,40 @@ class _SplashScreenState extends State<SplashScreen> {
       body: BackgroundContainer(
         child: Stack(
           children: [
-            Positioned(child:
-            Align(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    "assets/images/logo.png",
-                  ),
-                  const Text("hearsome",
-                    textAlign:TextAlign.center,
-                    style: TextStyle(
-                      color: AppColors.primaryColor,
-                      fontFamily: "Cairo",
-                      fontSize: 24.0,
+            Positioned(
+              child: Align(
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/images/logo.png",
                     ),
-                  ),
-                ],
+                    const Text(
+                      "hearsome",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: AppColors.primaryColor,
+                        fontFamily: "Cairo",
+                        fontSize: 24.0,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
             ),
             const Positioned(
               child: Align(
                 alignment: Alignment(0.0, 0.75),
                 child: CircularProgressIndicator(
-              valueColor:  AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
+                  valueColor:
+                      AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
+                ),
+              ),
             ),
-            ),
-            ),
-             
           ],
         ),
       ),
     );
   }
 }
-
