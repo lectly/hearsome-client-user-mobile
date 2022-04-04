@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
+import 'package:lectly_client_user_mobile/src/ui/NoInternetScreen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepPurple),
-      home: const SplashScreen(),
+      home: const NoInternetScreen(),
     );
   }
 }
