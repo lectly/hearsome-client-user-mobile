@@ -18,6 +18,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    checkInternet();
+  }
+
+  checkInternet() {
     Internet.checkConnectivity().then((isConnected) {
       Timer(const Duration(seconds: 5), () {
         if (isConnected) {
