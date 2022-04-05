@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/ui/home_screen.dart';
-import 'package:lectly_client_user_mobile/src/ui/NoInternetScreen.dart';
+import 'package:lectly_client_user_mobile/src/ui/no_internet/no_internet.dart';
 import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 
