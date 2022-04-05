@@ -64,14 +64,11 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                  OutlinedButton(
                   onPressed: () {
                       Internet.checkConnectivity().then((isConnected) {
-
                           if (isConnected) {
                             Navigator.pushReplacement(context,
                                 MaterialPageRoute(builder: (context) => const HomePage()));
                             return;
                           }
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (context) => const NoInternetScreen()));
                         });
                   },
                   child: const Text('Try Again'),
