@@ -13,9 +13,6 @@ class NoInternetScreen extends StatefulWidget {
 }
 
 class _NoInternetScreenState extends State<NoInternetScreen> {
-  final Internet Int= new Internet();
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
