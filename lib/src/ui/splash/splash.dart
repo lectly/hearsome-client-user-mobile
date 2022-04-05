@@ -1,5 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
+import 'package:lectly_client_user_mobile/src/ui/home_screen.dart';
+import 'package:lectly_client_user_mobile/src/ui/NoInternetScreen.dart';
+import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -10,6 +15,26 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    checkInternet();
+  }
+
+  checkInternet() {
+    Internet.checkConnectivity().then((isConnected) {
+      Timer(const Duration(seconds: 5), () {
+        if (isConnected) {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const HomePage()));
+          return;
+        }
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const NoInternetScreen()));
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 alignment: Alignment(0.0, 0.75),
                 child: CircularProgressIndicator(
                   valueColor:
-                      AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
+                  AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
                 ),
               ),
             ),

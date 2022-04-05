@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/ui/profileScreen.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
+import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
+import 'package:lectly_client_user_mobile/src/ui/home_screen.dart';
 
 class NoInternetScreen extends StatefulWidget {
   const NoInternetScreen({Key? key}) : super(key: key);
@@ -11,6 +13,9 @@ class NoInternetScreen extends StatefulWidget {
 }
 
 class _NoInternetScreenState extends State<NoInternetScreen> {
+  final Internet Int= new Internet();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,8 +68,20 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     const SizedBox(height: 20,),
                  OutlinedButton(
                   onPressed: () {
-                    //that's for now until i add the conditions from merna
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>profileScreen()));
+
+
+                      Internet.checkConnectivity().then((isConnected) {
+
+                          if (isConnected) {
+                            Navigator.pushReplacement(context,
+                                MaterialPageRoute(builder: (context) => const HomePage()));
+                            return;
+                          }
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => const NoInternetScreen()));
+                        });
+
+
                   },
                   child: const Text('Try Again'),
                   style: OutlinedButton.styleFrom(
