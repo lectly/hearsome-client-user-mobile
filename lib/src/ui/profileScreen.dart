@@ -21,9 +21,12 @@ class _profileScreenState extends State<profileScreen> {
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const SizedBox(height: 60,),
-                    const Text(
+
+                  children: const [
+                    SizedBox(
+                      height: 60,
+                    ),
+                    Text(
                       "Profile",
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -42,4 +45,6 @@ class _profileScreenState extends State<profileScreen> {
       ),
     );
   }
+
 }
+

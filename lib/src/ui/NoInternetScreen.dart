@@ -23,7 +23,11 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 60,),
+
+                    const SizedBox(
+                      height: 60,
+                    ),
+
                     const Text(
                       "No Internet Connection",
                       textAlign: TextAlign.center,
@@ -34,11 +38,17 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 20,),
+
+                    const SizedBox(
+                      height: 20,
+                    ),
                     Image.asset(
                       "assets/images/warning.png",
                     ),
-                    const SizedBox(height: 20,),
+                    const SizedBox(
+                      height: 20,
+                    ),
+
                     const Text(
                       "Please check your connection!",
                       textAlign: TextAlign.center,
@@ -46,6 +56,7 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                         color: AppColors.primaryColor,
                         fontFamily: "Cairo",
                         fontSize: 16.0,
+
 
                       ),
                     ),
@@ -67,6 +78,7 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     ),
                   ),)
                                   ],
+
                 ),
               ),
             ),
@@ -76,3 +88,5 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
     );
   }
 }
+
+
