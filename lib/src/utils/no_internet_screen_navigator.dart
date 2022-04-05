@@ -14,8 +14,8 @@ class InternetNavigate {
             MaterialPageRoute(builder: (context) => const HomePage()));
         return;
       }
-        Navigator.push(context,
-        MaterialPageRoute(builder: (context) => const NoInternetScreen()));
+
+
   });
 
 
