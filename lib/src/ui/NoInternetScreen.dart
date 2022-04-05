@@ -13,9 +13,6 @@ class NoInternetScreen extends StatefulWidget {
 }
 
 class _NoInternetScreenState extends State<NoInternetScreen> {
-  final Internet Int= new Internet();
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,15 +58,11 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                         color: AppColors.primaryColor,
                         fontFamily: "Cairo",
                         fontSize: 16.0,
-
-
                       ),
                     ),
                     const SizedBox(height: 20,),
                  OutlinedButton(
                   onPressed: () {
-
-
                       Internet.checkConnectivity().then((isConnected) {
 
                           if (isConnected) {
@@ -80,16 +73,14 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) => const NoInternetScreen()));
                         });
-
-
                   },
                   child: const Text('Try Again'),
                   style: OutlinedButton.styleFrom(
-                    primary: Colors.white,
-                    side: const BorderSide(color: Colors.white, width: 1),
+                    primary: AppColors.primaryColor,
+                    side: const BorderSide(color: AppColors.primaryColor, width: 1),
                     shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
                     textStyle: const TextStyle(
-                        color: Colors.white,
+                        color: AppColors.primaryColor,
                         fontSize: 16,
                         fontFamily: "Cairo",
                     ),

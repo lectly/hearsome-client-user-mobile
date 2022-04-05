@@ -5,8 +5,6 @@ import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 
 import 'package:lectly_client_user_mobile/src/ui/NoInternetScreen.dart';
 import 'package:lectly_client_user_mobile/src/ui/profileScreen.dart';
-import 'package:lectly_client_user_mobile/src/ui/NoInternetScreen.dart';
-import 'package:lectly_client_user_mobile/src/ui/profileScreen.dart';
 import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 
 
