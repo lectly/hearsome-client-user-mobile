@@ -56,16 +56,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    const Positioned(
-                      child: GoogleSignInButton(),
-                    ),
+                    const GoogleSignInButton(),
                   ],
                 ),
               ),
             ),
-            const Positioned(
-              child: DropDownList(),
-            ),
+             const DropDownList(),
           ],
         ),
       ),
