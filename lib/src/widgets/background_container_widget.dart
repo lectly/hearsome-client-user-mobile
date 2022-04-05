@@ -12,3 +12,4 @@ class BackgroundContainer extends Container {
           decoration: BoxDecoration(gradient: AppColors.background),
         );
 }
+
