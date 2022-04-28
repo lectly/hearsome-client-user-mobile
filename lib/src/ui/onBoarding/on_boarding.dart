@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/widgets/drop_down_button_widget.dart';
-import 'package:lectly_client_user_mobile/src/widgets/google_signIn_button_widget.dart';
+import 'package:lectly_client_user_mobile/src/widgets/google_signin_button_widget.dart';
 import 'package:lectly_client_user_mobile/src/widgets/horizontal_logo_widget.dart';
 
 import '../../constants/colors.dart';
@@ -61,7 +61,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
               ),
             ),
-             const DropDownList(),
+            const Align(
+              alignment: Alignment(0.0, 0.9),
+              child: DropDownList(),
+            ),
           ],
         ),
       ),
