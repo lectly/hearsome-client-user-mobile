@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
-import 'package:lectly_client_user_mobile/src/ui/home_screen.dart';
 import 'package:lectly_client_user_mobile/src/ui/no_internet.dart';
 import 'package:lectly_client_user_mobile/src/ui/onBoarding/on_boarding.dart';
 import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
@@ -26,8 +25,10 @@ class _SplashScreenState extends State<SplashScreen> {
     Internet.checkConnectivity().then((isConnected) {
       Timer(const Duration(seconds: 5), () {
         if (isConnected) {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const OnBoardingScreen()));
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const OnBoardingScreen()));
           return;
         }
         Navigator.pushReplacement(context,
