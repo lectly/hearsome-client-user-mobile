@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/widgets/drop_down_button_widget.dart';
+import 'package:lectly_client_user_mobile/src/widgets/google_signin_button_widget.dart';
 import 'package:lectly_client_user_mobile/src/widgets/horizontal_logo_widget.dart';
 
 import '../../constants/colors.dart';
@@ -22,23 +23,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           children: [
             Positioned(
               child: Align(
-                alignment: const Alignment(0.0, -0.9),
+                alignment: const Alignment(0.0, -0.85),
                 child: HorizontalLogo(),
-              ),
-            ),
-            const Positioned(
-              child: Align(
-                alignment: Alignment(0.0, -0.65),
-                child: Text(
-                  "Stay Connected",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: AppColors.primaryColor,
-                    fontFamily: "Cairo",
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
               ),
             ),
             Positioned(
@@ -46,6 +32,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    const Text(
+                      "Stay Connected",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: AppColors.primaryColor,
+                        fontFamily: "Cairo",
+                        fontSize: 32.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     Image.asset(
                       "assets/images/on_boarding.png",
                     ),
@@ -54,17 +50,18 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: AppColors.primaryColor,
+                        height: 1.5,
                         fontFamily: "Cairo",
                         fontSize: 16.0,
                       ),
                     ),
+                    const SizedBox(height: 5),
+                    const GoogleSignInButton(),
                   ],
                 ),
               ),
             ),
-            const Positioned(
-              child: DropDownList(),
-            ),
+            const DropDownList(),
           ],
         ),
       ),
