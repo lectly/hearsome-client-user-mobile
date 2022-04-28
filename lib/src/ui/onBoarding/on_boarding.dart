@@ -61,7 +61,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 ),
               ),
             ),
-            const DropDownList(),
+            const Align(
+              alignment: Alignment(0.0, 0.9),
+              child: DropDownList(),
+            ),
           ],
         ),
       ),
