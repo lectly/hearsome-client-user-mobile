@@ -4,14 +4,14 @@ import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 import 'package:lectly_client_user_mobile/src/widgets/app_bar_widget.dart';
 
-class profileScreen extends StatefulWidget {
-  const profileScreen({Key? key}) : super(key: key);
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({Key? key}) : super(key: key);
 
   @override
-  _profileScreenState createState() => _profileScreenState();
+  _ProfileScreenState createState() => _ProfileScreenState();
 }
 
-class _profileScreenState extends State<profileScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
