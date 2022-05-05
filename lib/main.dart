@@ -8,6 +8,7 @@ import 'package:lectly_client_user_mobile/src/widgets/background_container_widge
 import 'package:lectly_client_user_mobile/src/widgets/app_bar_widget.dart';
 
 
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepPurple),
 
-      home: const profileScreen(),
 
+      home: const profileScreen(),
 
     );
   }
