@@ -4,7 +4,7 @@ import 'package:lectly_client_user_mobile/src/ui/profile.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
 import 'package:lectly_client_user_mobile/src/ui/home_screen.dart';
-import 'package:lectly_client_user_mobile/src/utils/no_internet_screen_navigator.dart';
+import 'package:lectly_client_user_mobile/src/utils/check_internet_swap_screens.dart';
 
 class NoInternetScreen extends StatefulWidget {
   const NoInternetScreen({Key? key}) : super(key: key);
