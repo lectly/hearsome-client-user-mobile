@@ -45,6 +45,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     ),
                     Image.asset(
                       "assets/images/on_boarding.png",
+                      height: 200.0,
                     ),
                     Text(
                       "message".tr,
