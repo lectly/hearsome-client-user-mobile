@@ -22,9 +22,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       body: BackgroundContainer(
         child: Stack(
           children: [
-            Positioned(
+            const Positioned(
               child: Align(
-                alignment: const Alignment(0.0, -0.85),
+                alignment: Alignment(0.0, -0.85),
                 child: HorizontalLogo(),
               ),
             ),
@@ -33,7 +33,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     Text(
+                    Text(
                       "connected".tr,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
@@ -46,7 +46,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     Image.asset(
                       "assets/images/on_boarding.png",
                     ),
-                     Text(
+                    Text(
                       "message".tr,
                       textAlign: TextAlign.center,
                       style: const TextStyle(

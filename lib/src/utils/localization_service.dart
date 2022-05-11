@@ -1,18 +1,14 @@
 import 'dart:ui';
-
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/root/internacionalization.dart';
-import 'package:lectly_client_user_mobile/src/constants/lang/ar_eg.dart';
-
+import '../constants/lang/ar_eg.dart';
 import '../constants/lang/en_us.dart';
 
 class LocalizationService extends Translations {
   // Default locale
-  static const locale =  Locale('en', 'US') ;
+  static const locale = Locale('en', 'US');
 
   // fallbackLocale saves the day when the locale gets in trouble
-  static const fallbackLocale =  Locale('ar', 'EG');
+  static const fallbackLocale = Locale('ar', 'EG');
 
   // Supported languages
   // Needs to be same order with locales
@@ -32,9 +28,9 @@ class LocalizationService extends Translations {
   // Translations are separated maps in `lang` file
   @override
   Map<String, Map<String, String>> get keys => {
-    'en_US': enUS, // lang/en_us.dart
-    'ar_EG': arEG, // lang/ar_eg.dart
-  };
+        'en_US': enUS, // lang/en_us.dart
+        'ar_EG': arEG, // lang/ar_eg.dart
+      };
 
   // Gets locale from language, and updates the locale
   void changeLocale(String lang) {
