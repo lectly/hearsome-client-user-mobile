@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 
-class HorizontalLogo extends Row {
-  HorizontalLogo({Key? key})
-      : super(key: key, mainAxisAlignment: MainAxisAlignment.center, children: [
+class HorizontalLogo extends StatelessWidget {
+  const HorizontalLogo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+        textDirection: TextDirection.ltr,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+            children: [
           Image.asset(
             "assets/images/horizontal_logo.png",
           ),
@@ -18,5 +25,6 @@ class HorizontalLogo extends Row {
               fontSize: 24.0,
             ),
           ),
-        ]);
+        ]));
+  }
 }
