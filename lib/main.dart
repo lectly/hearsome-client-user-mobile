@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
+import 'package:lectly_client_user_mobile/src/utils/localization_service.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -13,9 +15,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      locale: LocalizationService.locale,
+      fallbackLocale: LocalizationService.fallbackLocale,
+      translations: LocalizationService(),
       home: const SplashScreen(),
     );
   }

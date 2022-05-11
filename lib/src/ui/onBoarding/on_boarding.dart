@@ -6,6 +6,7 @@ import 'package:lectly_client_user_mobile/src/widgets/horizontal_logo_widget.dar
 import '../../constants/colors.dart';
 import '../../widgets/background_container_widget.dart';
 import '../../widgets/drop_down_button_widget.dart';
+import 'package:get/get.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -21,9 +22,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       body: BackgroundContainer(
         child: Stack(
           children: [
-            Positioned(
+            const Positioned(
               child: Align(
-                alignment: const Alignment(0.0, -0.85),
+                alignment: Alignment(0.0, -0.85),
                 child: HorizontalLogo(),
               ),
             ),
@@ -32,10 +33,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      "Stay Connected",
+                    Text(
+                      "connected".tr,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppColors.primaryColor,
                         fontFamily: "Cairo",
                         fontSize: 32.0,
@@ -44,11 +45,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     ),
                     Image.asset(
                       "assets/images/on_boarding.png",
+                      height: 200.0,
                     ),
-                    const Text(
-                      "	Speech-to-Text tool that will \n keep you engaged the whole day \n socializing, shopping, working and more.",
+                    Text(
+                      "message".tr,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppColors.primaryColor,
                         height: 1.5,
                         fontFamily: "Cairo",

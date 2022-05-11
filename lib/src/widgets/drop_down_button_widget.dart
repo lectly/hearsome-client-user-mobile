@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
+import 'package:lectly_client_user_mobile/src/utils/localization_service.dart';
 
 class DropDownList extends StatefulWidget {
   const DropDownList({Key? key}) : super(key: key);
@@ -9,8 +10,7 @@ class DropDownList extends StatefulWidget {
 }
 
 class _DropDownListState extends State<DropDownList> {
-  final List<String> _languages = ["English", "العربية"];
-  String selectedLanguage = "English";
+  String selectedLanguage = LocalizationService.langs.first;
   @override
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
@@ -35,31 +35,32 @@ class _DropDownListState extends State<DropDownList> {
                 onChanged: (value) {
                   setState(() {
                     selectedLanguage = value!;
+                    LocalizationService().changeLocale(value);
                   });
                 },
                 value: selectedLanguage,
-                items: _languages
-                    .map((e) => DropdownMenuItem(
-                          alignment: Alignment.bottomCenter,
-                          child: Text(
-                            e,
-                            style: const TextStyle(fontSize: 18),
-                          ),
-                          value: e,
-                        ))
-                    .toList(),
-                selectedItemBuilder: (BuildContext context) => _languages
-                    .map((e) => Center(
-                          child: Text(
-                            e,
-                            style: const TextStyle(
-                                fontSize: 16,
-                                color: AppColors.primaryColor,
-                                fontFamily: "Cairo",
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ))
-                    .toList(),
+                items: LocalizationService.langs.map((String lang) {
+                  return DropdownMenuItem(
+                      alignment: Alignment.bottomCenter,
+                      value: lang,
+                      child: Text(
+                        lang,
+                        style: const TextStyle(fontSize: 18),
+                      ));
+                }).toList(),
+                selectedItemBuilder: (BuildContext context) =>
+                    LocalizationService.langs.map((String lang) {
+                  return Center(
+                    child: Text(
+                      lang,
+                      style: const TextStyle(
+                          fontSize: 16,
+                          color: AppColors.primaryColor,
+                          fontFamily: "Cairo",
+                          fontWeight: FontWeight.bold),
+                    ),
+                  );
+                }).toList(),
               ),
             ),
           ],
