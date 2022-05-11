@@ -1,11 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
-import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
-
-import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
 import 'package:lectly_client_user_mobile/src/ui/home_screen.dart';
-import 'package:lectly_client_user_mobile/src/utils/check_internet_swap_screens.dart';
-
+import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
+import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 
 class NoInternetScreen extends StatefulWidget {
   const NoInternetScreen({Key? key}) : super(key: key);
@@ -15,6 +14,18 @@ class NoInternetScreen extends StatefulWidget {
 }
 
 class _NoInternetScreenState extends State<NoInternetScreen> {
+  checkInternet() {
+    Internet.checkConnectivity().then((isConnected) {
+      Timer(const Duration(seconds: 5), () {
+        if (isConnected) {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const HomePage()));
+          return;
+        }
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,9 +73,7 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                       height: 20,
                     ),
                     OutlinedButton(
-                      onPressed: () {
-                        InternetNavigate.navigate(context);
-                      },
+                      onPressed: checkInternet,
                       child: const Text('Try Again'),
                       style: OutlinedButton.styleFrom(
                         primary: AppColors.primaryColor,

@@ -68,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 alignment: Alignment(0.0, 0.75),
                 child: CircularProgressIndicator(
                   valueColor:
-                  AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
+                      AlwaysStoppedAnimation<Color>(AppColors.secondaryColor),
                 ),
               ),
             ),
