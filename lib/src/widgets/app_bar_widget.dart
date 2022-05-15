@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 import '../constants/colors.dart';
+import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 
 class Appbar extends StatelessWidget {
   const Appbar({Key? key}) : super(key: key);
@@ -34,6 +34,8 @@ class Appbar extends StatelessWidget {
           },
         ),
       ],
+      // TODO: Update back button logic to support closing app
+      //  if end of history tree
 
       leading: IconButton(
         icon: Image.asset('assets/images/back.png'),
