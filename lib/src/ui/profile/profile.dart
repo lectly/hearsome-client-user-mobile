@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
@@ -29,10 +30,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       height: 32,
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.only(left: 26.0),
-                          child: const Text(
+                         Padding(
+                            padding: EdgeInsets.only(left: 24.0),
+                         child: const Text(
                             "Hello, <Username>👋",
                             style: TextStyle(
                               color: AppColors.primaryColor,
@@ -41,12 +43,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
+              ),
                         const SizedBox(
                           height: 24,
                         ),
-                        Container(
-                          padding: const EdgeInsets.only(left: 26.0),
+                        Padding(
+                          padding: EdgeInsets.only(left: 24.0),
                           child: const Text(
                             "Email",
                             textAlign: TextAlign.left,
@@ -54,12 +56,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               color: AppColors.primaryColor,
                               fontFamily: "Cairo",
                               fontSize: 14.0,
-                            ),
+
                           ),
                         ),
-                        Container(
-                          padding: const EdgeInsets.only(left: 26.0),
-                          child: const Text(
+                        ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 24.0),
+                        child: const Text(
                             "<example@email.com>",
                             textAlign: TextAlign.left,
                             style: TextStyle(
