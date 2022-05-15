@@ -13,8 +13,11 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    var padding = width*0.06;
     return Scaffold(
       body: BackgroundContainer(
         child: Stack(
@@ -33,7 +36,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                          Padding(
-                            padding: EdgeInsets.only(left: 24.0),
+
+                            padding: EdgeInsets.only(left: padding),
                          child: const Text(
                             "Hello, <Username>👋",
                             style: TextStyle(
@@ -48,7 +52,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 24,
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 24.0),
+                          padding: EdgeInsets.only(left: padding),
                           child: const Text(
                             "Email",
                             textAlign: TextAlign.left,
@@ -61,7 +65,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         ),
                       Padding(
-                        padding: EdgeInsets.only(left: 24.0),
+                        padding: EdgeInsets.only(left: padding),
                         child: const Text(
                             "<example@email.com>",
                             textAlign: TextAlign.left,
