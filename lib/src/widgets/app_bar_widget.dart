@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 import '../constants/colors.dart';
 
 class Appbar extends StatelessWidget {
@@ -33,9 +34,15 @@ class Appbar extends StatelessWidget {
           },
         ),
       ],
-      // TODO: Update back button logic to support closing app
-      //  if end of history tree
-      leading: const BackButton(),
+
+      leading: IconButton(
+        icon: Image.asset('assets/images/back.png'),
+        iconSize: 50,
+        onPressed: () {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const SplashScreen())); //it should be mainscreen but code is not merged yet
+        },
+      ),
     );
   }
 }
