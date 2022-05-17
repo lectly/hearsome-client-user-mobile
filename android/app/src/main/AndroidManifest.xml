@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lectly.lectly_client_user_mobile">
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
    <application
         android:label="lectly_client_user_mobile"
         android:name="${applicationName}"
@@ -31,4 +35,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+
 </manifest>
