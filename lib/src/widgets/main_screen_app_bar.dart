@@ -16,6 +16,7 @@ class Appbar extends StatelessWidget {
         actions: [
           IconButton(
             icon: Image.asset('assets/images/language.png'),
+            iconSize: 50,
             onPressed: () {
 
             },
