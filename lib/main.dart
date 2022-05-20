@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lectly_client_user_mobile/src/ui/profile/profile.dart';
-import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
+
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(

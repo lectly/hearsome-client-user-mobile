@@ -4,7 +4,7 @@ import '../constants/colors.dart';
 class DialogButton extends StatelessWidget {
   const DialogButton({Key? key}) : super(key: key);
 
-// FIXME: BAD IMPLEMENTATION, NEEDS REWORK
+
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
