@@ -1,8 +1,7 @@
-import 'dart:async';
 
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
-import 'package:lectly_client_user_mobile/src/ui/home_screen.dart';
 import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 
@@ -14,17 +13,7 @@ class NoInternetScreen extends StatefulWidget {
 }
 
 class _NoInternetScreenState extends State<NoInternetScreen> {
-  checkInternet() {
-    Internet.checkConnectivity().then((isConnected) {
-      Timer(const Duration(seconds: 5), () {
-        if (isConnected) {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const HomePage()));
-          return;
-        }
-      });
-    });
-  }
+  final Internet internet = Internet();
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +30,8 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     const SizedBox(
                       height: 60,
                     ),
-                    const Text(
-                      "No Internet Connection",
+                     Text(
+                      "no_internet".tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: AppColors.primaryColor,
@@ -60,8 +49,8 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text(
-                      "Please check your connection!",
+                     Text(
+                      "check".tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: AppColors.primaryColor,
@@ -72,9 +61,16 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     const SizedBox(
                       height: 20,
                     ),
+
                     OutlinedButton(
-                      onPressed: checkInternet,
-                      child: const Text('Try Again'),
+
+                      onPressed: (){
+
+                        internet.noInternetScreen(context);
+                        
+                      },
+
+                      child:  Text('try_again'.tr),
                       style: OutlinedButton.styleFrom(
                         primary: AppColors.primaryColor,
                         side: const BorderSide(
@@ -95,6 +91,10 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
           ],
         ),
       ),
+
+
     );
+
   }
+
 }

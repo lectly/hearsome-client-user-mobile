@@ -69,11 +69,25 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flutter_resources:
+    dependency: "direct main"
+    description:
+      name: flutter_resources
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.6.1"
   lints:
     dependency: transitive
     description:
@@ -171,4 +185,6 @@ packages:
     source: hosted
     version: "2.1.1"
 sdks:
+  collection: ">=1.15.0 <2.0.0"
   dart: ">=2.16.1 <3.0.0"
+  flutter: ">=2.0.0"

@@ -15,24 +15,11 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  final Internet internet = Internet();
   @override
   void initState() {
     super.initState();
-    checkInternet();
-  }
-
-  checkInternet() {
-    Internet.checkConnectivity().then((isConnected) {
-      Timer(const Duration(seconds: 5), () {
-        if (isConnected) {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const HomePage()));
-          return;
-        }
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const NoInternetScreen()));
-      });
-    });
+    internet.checkInternet_splashScreen(context);
   }
 
   @override
