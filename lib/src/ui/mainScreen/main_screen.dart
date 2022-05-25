@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/public/flutter_sound_recorder.dart';
 import 'package:get/get.dart';
@@ -17,6 +18,14 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  Future<String?>  initState() async{
+    final User? user = auth.currentUser;
+    final String?  token = await user?.getIdToken();
+    return (token);
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +50,7 @@ class _MainScreenState extends State<MainScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+
                     const SizedBox(
                       height: 20,
                     ),
