@@ -3,7 +3,7 @@ description: Lectly Client User Mobile
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,8 +31,6 @@ dependencies:
   flutter_native_splash: ^2.1.6
   flutter:
     sdk: flutter
-
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -52,6 +50,8 @@ dependencies:
 
 
 
+  get: #any version
+  flutter_resources: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -69,7 +69,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -77,14 +76,21 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-      - assets/images/logo.png
-      - assets/images/horizontal_logo.png
-      - assets/images/on_boarding.png
-      - assets/images/language.png
-      - assets/images/google_logo.png
-      - assets/images/user.png
-      - assets/images/ellipse.png
-      - assets/images/mic.png
+    - assets/images/logo.png
+    - assets/images/horizontal_logo.png
+    - assets/images/on_boarding.png
+    - assets/images/language.png
+    - assets/images/google_logo.png
+    - assets/images/user.png
+    - assets/images/ellipse.png
+    - assets/images/mic.png
+    - assets/images/warning.png
+    - assets/images/logo.png
+    - assets/images/back.png
+    - assets/images/globe.png
+    - assets/images/egyptian_flag.png
+    - assets/images/american_flag.png
+    - assets/images/arrow.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -100,9 +106,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-     - family: Cairo
-       fonts:
-         - asset: assets/fonts/Cairo-Medium.ttf
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Medium.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Medium.ttf
+
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

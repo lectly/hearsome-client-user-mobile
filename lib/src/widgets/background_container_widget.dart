@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../constants/colors.dart';
 
 class BackgroundContainer extends Container {
@@ -12,3 +11,4 @@ class BackgroundContainer extends Container {
           decoration: BoxDecoration(gradient: AppColors.background),
         );
 }
+

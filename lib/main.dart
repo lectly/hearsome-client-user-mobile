@@ -4,6 +4,10 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 import 'package:lectly_client_user_mobile/src/ui/mainScreen/main_screen.dart';
 import 'package:lectly_client_user_mobile/src/utils/localization_service.dart';
+import 'package:lectly_client_user_mobile/src/ui/profile/profile.dart';
+import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
+import 'package:lectly_client_user_mobile/src/utils/localization_service.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -22,6 +26,7 @@ class MyApp extends StatelessWidget {
       fallbackLocale: LocalizationService.fallbackLocale,
       translations: LocalizationService(),
       home: const SplashScreen(),
+
     );
   }
 }
