@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/ui/home_screen.dart';
+import '../ui/mainScreen/main_screen.dart';
 import '../utils/authentication.dart';
 
 class GoogleSignInButton extends StatefulWidget {
@@ -29,7 +30,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
     if (user != null) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const HomePage(
+          builder: (context) => const MainScreen(
               //user: user,
               ),
         ),
