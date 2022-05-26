@@ -1,13 +1,12 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 import 'package:lectly_client_user_mobile/src/widgets/app_bar_widget.dart';
 import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
-import'package:lectly_client_user_mobile/src/ui/no_internet/no_internet.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -18,17 +17,24 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   final Internet internet = Internet();
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  List getUserData()  {
+    final User? user = auth.currentUser;
+    final String? userName =  user?.displayName;
+    final String? userEmail =  user?.email;
+    return[ userName,userEmail];
+  }
 
 
   bool isStopped = false;
-
   sec5Timer() {
+
     Timer.periodic(const Duration(seconds: 5), (timer) {
       if (isStopped) {
         timer.cancel();
       }
       if (mounted) {
-        internet.SwapAnyScreen(context);
+        internet.swapAnyScreen(context);
       }
     });
   }
@@ -43,10 +49,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void dispose() {
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
-
     double width = MediaQuery.of(context).size.width;
     var padding = width * 0.06;
     return Scaffold(
@@ -68,9 +72,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(left: padding),
-                          child:  Text(
-                            "hello".tr,
-                            style: TextStyle(
+                          child: Text(
+                            "hello".tr+   (getUserData())[0],
+                            style: const TextStyle(
                               color: AppColors.primaryColor,
                               fontFamily: "Cairo",
                               fontSize: 24.0,
@@ -83,10 +87,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: padding),
-                          child:  Text(
+                          child: Text(
                             "email".tr,
                             textAlign: TextAlign.left,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: AppColors.primaryColor,
                               fontFamily: "Cairo",
                               fontSize: 14.0,
@@ -95,10 +99,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: padding),
-                          child:  Text(
-                            "<example@email.com>".tr,
+                          child: Text(
+                            (getUserData())[1],
                             textAlign: TextAlign.left,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: AppColors.primaryColor,
                               fontFamily: "Cairo",
                               fontSize: 16.0,
@@ -114,7 +118,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: 256,
                               height: 53,
                               child: OutlinedButton(
-                                child:  Text('logout'.tr),
+                                child: Text('logout'.tr),
                                 style: OutlinedButton.styleFrom(
                                   primary: AppColors.primaryColorDark,
                                   backgroundColor: AppColors.primaryColor,
@@ -138,9 +142,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               const SplashScreen()));
                                 },
                               )),
-
                         ),
-
                       ],
                     ),
                   ],
