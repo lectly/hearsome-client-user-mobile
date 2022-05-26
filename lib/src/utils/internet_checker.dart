@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
-import '../ui/home_screen.dart';
+import 'package:lectly_client_user_mobile/src/ui/onBoarding/on_boarding.dart';
+
 import '../ui/no_internet/no_internet.dart';
 
 class Internet {
@@ -17,24 +18,24 @@ class Internet {
     return false;
   }
 
-  checkInternet_splashScreen(context) {
+  checkInternetSplashScreen(context) {
     Internet.checkConnectivity().then((isConnected) {
       Timer(const Duration(seconds: 5), () {
         if (isConnected) {
-          Navigator.pushReplacement(
+          Navigator.push(
               context,
               MaterialPageRoute(
                   builder: (context) =>
-                      const HomePage())); //after merging i will replace with onboarding
+                      const OnBoardingScreen())); //after merging i will replace with onboarding
           return;
         }
-        Navigator.pushReplacement(context,
+        Navigator.push(context,
             MaterialPageRoute(builder: (context) => const NoInternetScreen()));
       });
     });
   }
 
-  SwapAnyScreen(context) {
+  swapAnyScreen(context) {
     Internet.checkConnectivity().then((isConnected) {
       if (isConnected) {
         return;

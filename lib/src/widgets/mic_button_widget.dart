@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/public/flutter_sound_recorder.dart';
-import 'package:lectly_client_user_mobile/src/utils/uploadToS3.dart';
+import 'package:lectly_client_user_mobile/src/utils/upload_to_s3.dart';
 import '../constants/colors.dart';
 import '../utils/permissions.dart';
 
@@ -13,7 +13,7 @@ class RecordButton extends StatefulWidget {
 }
 
 class _RecordButtonState extends State<RecordButton> {
-  final UploadToS3 uploadToS3 = UploadToS3();
+  final S3Client uploadToS3 = S3Client();
   final Permissions permissions = Permissions();
   final recorder = FlutterSoundRecorder();
   bool isRecorderReady = false;
@@ -44,7 +44,7 @@ class _RecordButtonState extends State<RecordButton> {
   }
 
   Future initRecorder() async {
-    permissions.CheckPermissions();
+    permissions.checkPermissions();
     await recorder.openRecorder();
     isRecorderReady = true;
   }

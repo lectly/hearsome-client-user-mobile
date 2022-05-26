@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
@@ -30,10 +29,10 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     const SizedBox(
                       height: 60,
                     ),
-                     Text(
+                    Text(
                       "no_internet".tr,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppColors.primaryColor,
                         fontFamily: "Cairo",
                         fontSize: 32.0,
@@ -49,10 +48,10 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                     Text(
+                    Text(
                       "check".tr,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: AppColors.primaryColor,
                         fontFamily: "Cairo",
                         fontSize: 16.0,
@@ -61,16 +60,11 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-
                     OutlinedButton(
-
-                      onPressed: (){
-
+                      onPressed: () {
                         internet.noInternetScreen(context);
-                        
                       },
-
-                      child:  Text('try_again'.tr),
+                      child: Text('try_again'.tr),
                       style: OutlinedButton.styleFrom(
                         primary: AppColors.primaryColor,
                         side: const BorderSide(
@@ -91,10 +85,6 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
           ],
         ),
       ),
-
-
     );
-
   }
-
 }

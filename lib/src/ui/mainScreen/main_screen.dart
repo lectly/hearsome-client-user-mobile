@@ -1,13 +1,9 @@
-import 'dart:io';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sound/public/flutter_sound_recorder.dart';
 import 'package:get/get.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 import 'package:lectly_client_user_mobile/src/widgets/main_screen_app_bar.dart';
-import 'package:lectly_client_user_mobile/src/utils/permissions.dart';
 import 'package:lectly_client_user_mobile/src/widgets/mic_button_widget.dart';
 
 class MainScreen extends StatefulWidget {
@@ -19,13 +15,17 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   final FirebaseAuth auth = FirebaseAuth.instance;
-
-  Future<String?>  initState() async{
+  List getUserData()  {
     final User? user = auth.currentUser;
-    final String?  token = await user?.getIdToken();
-    return (token);
+    final String? userName =  user?.displayName;
+    final String? userEmail =  user?.email;
+    return[ userName,userEmail];
   }
-
+  // Future<String?> get() async {
+  //   final User? user = auth.currentUser;
+  //   final String? token = await user?.getIdToken();
+  //   return (token);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,6 @@ class _MainScreenState extends State<MainScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-
                     const SizedBox(
                       height: 20,
                     ),
