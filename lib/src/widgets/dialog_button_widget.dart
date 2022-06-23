@@ -21,7 +21,7 @@ class _DialogButtonState extends State<DialogButton> {
       Container(
         decoration: const BoxDecoration(
             color: AppColors.primaryColorDark,
-            borderRadius: BorderRadius.all(Radius.circular(8.0))),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(8.0))),
         height: 48,
         child: SimpleDialogOption(
           onPressed: () => Navigator.pop(context),
@@ -47,7 +47,7 @@ class _DialogButtonState extends State<DialogButton> {
       Container(
         decoration: const BoxDecoration(
             color: AppColors.primaryColor,
-            borderRadius: BorderRadius.all(Radius.circular(8.0))),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(8.0))),
         height: 48,
         child: SimpleDialogOption(
           onPressed: () {
