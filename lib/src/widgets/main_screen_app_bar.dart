@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lectly_client_user_mobile/src/ui/profile/profile.dart';
 import 'package:lectly_client_user_mobile/src/widgets/horizontal_logo_widget.dart';
+import 'package:lectly_client_user_mobile/src/widgets/language_button_widget.dart';
 import '../constants/colors.dart';
 
 
@@ -13,20 +15,18 @@ class Appbar extends StatelessWidget {
         backgroundColor: AppColors.transparent,
         elevation: 0,
         title: const HorizontalLogo(),
-        actions: [
-          IconButton(
-            icon: Image.asset('assets/images/language.png'),
-            iconSize: 50,
-            onPressed: () {
-
-            },
-          ),
+        actions: const [
+          LanguageButton(),
         ],
         leading:
             IconButton(
               icon: Image.asset('assets/images/user.png'),
-              // iconSize: 50,
               onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                        const ProfileScreen()));
               },
             ),
     );

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:lectly_client_user_mobile/src/widgets/language_button_widget.dart';
 import '../constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
 import 'package:lectly_client_user_mobile/src/widgets/dialog_button_widget.dart';
 import 'package:get/get.dart';
 
-class Appbar extends StatelessWidget {
+class Appbar extends StatelessWidget with PreferredSizeWidget {
   const Appbar({Key? key}) : super(key: key);
 
   @override
@@ -22,30 +23,14 @@ class Appbar extends StatelessWidget {
           fontSize: 24.0,
         ),
       ),
-      actions: [
-        IconButton(
-          icon: Image.asset('assets/images/globe.png'),
-          iconSize: 50,
-          onPressed: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const DialogButton();
-                });
-          },
-        ),
+      actions: const [
+        LanguageButton(),
       ],
-      leading: IconButton(
-        icon: Image.asset('assets/images/back.png'),
-        iconSize: 50,
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const SplashScreen())); //it should be mainscreen but code is not merged yet
-        },
-      ),
+      leading:const BackButton(),
     );
   }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
