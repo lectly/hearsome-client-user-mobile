@@ -1,18 +1,35 @@
 {
   "project_info": {
     "project_number": "354515119742",
+    "firebase_url": "https://hearsome-2022-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "hearsome-2022",
     "storage_bucket": "hearsome-2022.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:354515119742:android:cd3bb602ac65042bb0322f",
+        "mobilesdk_app_id": "1:354515119742:android:00d4cdba45e1eeffb0322f",
         "android_client_info": {
           "package_name": "com.lectly.lectly_client_user_mobile"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "354515119742-0uaoc25t04blafvs3i6van5jg71ovva0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lectly.lectly_client_user_mobile",
+            "certificate_hash": "daca6bb4ee4bada8c9e91ae980f7d222ce6a2249"
+          }
+        },
+        {
+          "client_id": "354515119742-1irhucnsm13g3s6svmhngl0237mignk4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lectly.lectly_client_user_mobile",
+            "certificate_hash": "22d99332a53e3ddf7175800452305e5a528473db"
+          }
+        },
         {
           "client_id": "354515119742-1slerudqa0tps6of0tpifs8n8f03talv.apps.googleusercontent.com",
           "client_type": 3
@@ -31,7 +48,7 @@
               "client_type": 3
             },
             {
-              "client_id": "354515119742-glgletngk9iif0nfirmutu3cbvoig749.apps.googleusercontent.com",
+              "client_id": "354515119742-077t95bdhtkpuvp6itbnvs3aqrsdfi6j.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.hearsome"
