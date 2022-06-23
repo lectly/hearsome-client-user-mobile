@@ -43,6 +43,7 @@ class _MainScreenState extends State<MainScreen> {
                     const SizedBox(height: 137),
                     Text(
                       "hold".tr,
+                      textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: AppColors.primaryColor,
                         fontFamily: "Cairo",
