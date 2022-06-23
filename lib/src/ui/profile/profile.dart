@@ -3,10 +3,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
-import 'package:lectly_client_user_mobile/src/ui/splash/splash.dart';
+import 'package:lectly_client_user_mobile/src/ui/onBoarding/on_boarding.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 import 'package:lectly_client_user_mobile/src/widgets/app_bar_widget.dart';
 import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
+
+import '../../utils/authentication.dart';
+import '../../utils/string_casing_extension.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -18,17 +21,15 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   final Internet internet = Internet();
   final FirebaseAuth auth = FirebaseAuth.instance;
-  List getUserData()  {
+  List getUserData() {
     final User? user = auth.currentUser;
-    final String? userName =  user?.displayName;
-    final String? userEmail =  user?.email;
-    return[ userName,userEmail];
+    final String? userName = user?.displayName?.toTitleCase();
+    final String? userEmail = user?.email;
+    return [userName, userEmail];
   }
-
 
   bool isStopped = false;
   sec5Timer() {
-
     Timer.periodic(const Duration(seconds: 5), (timer) {
       if (isStopped) {
         timer.cancel();
@@ -49,6 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void dispose() {
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -71,9 +73,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: padding),
+                          padding: EdgeInsets.symmetric(horizontal: padding),
                           child: Text(
-                            "hello".tr+   (getUserData())[0],
+                            "hello".tr + " " + (getUserData())[0] + "👋🏻",
                             style: const TextStyle(
                               color: AppColors.primaryColor,
                               fontFamily: "Cairo",
@@ -86,7 +88,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           height: 24,
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: padding),
+                          padding: EdgeInsets.symmetric(horizontal: padding),
                           child: Text(
                             "email".tr,
                             textAlign: TextAlign.left,
@@ -98,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: padding),
+                          padding: EdgeInsets.symmetric(horizontal: padding),
                           child: Text(
                             (getUserData())[1],
                             textAlign: TextAlign.left,
@@ -134,12 +136,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     fontFamily: "Roboto",
                                   ),
                                 ),
-                                onPressed: () {
-                                  Navigator.pushReplacement(
-                                      context,
+                                onPressed: () async {
+                                  await Authentication.signOut(
+                                      context: context);
+                                  Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const SplashScreen()));
+                                              const OnBoardingScreen()),
+                                      (Route<dynamic> route) => false);
                                 },
                               )),
                         ),
