@@ -14,6 +14,7 @@ class Appbar extends StatelessWidget {
     return AppBar(
         backgroundColor: AppColors.transparent,
         elevation: 0,
+        centerTitle: true,
         title: const HorizontalLogo(),
         actions: const [
           LanguageButton(),

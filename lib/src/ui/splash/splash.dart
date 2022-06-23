@@ -32,16 +32,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "assets/images/logo.png",
-                    ),
-                    const Text(
-                      "hearsome",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: AppColors.primaryColor,
-                        fontFamily: "Cairo",
-                        fontSize: 24.0,
-                      ),
+                      "assets/images/v-logo.png",
+                      width: 128.0,
                     ),
                   ],
                 ),
