@@ -22,6 +22,11 @@ class MainController extends GetxController {
     // S3Provider.uploadAudio(file, signedURL);
     // final String objectURL =
     //     'https://' + bucketName + '.s3.amazonaws.com/' + objectName;
+
+    //  TRANSCRIBE AUDIO: DEBUG ENDPOINT
+    response = await _mainProvider.transcribe();
+    transcription.value = response['result'];
+    transcription.refresh();
   }
 
   setLoading() {

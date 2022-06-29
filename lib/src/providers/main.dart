@@ -15,4 +15,9 @@ class MainProvider {
     Response response = await _dio.get("/signed_url");
     return response.data;
   }
+
+  Future<dynamic> transcribe() async {
+    Response response = await _dio.get("/transcribe");
+    return response.data;
+  }
 }
