@@ -16,8 +16,7 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BackgroundContainer(
+    return BackgroundContainer(
         child: Stack(
           children: [
             Positioned(
@@ -84,7 +83,6 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
             ),
           ],
         ),
-      ),
     );
   }
 }

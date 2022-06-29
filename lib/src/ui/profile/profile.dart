@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/ui/onBoarding/on_boarding.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
-import 'package:lectly_client_user_mobile/src/widgets/app_bar_widget.dart';
+import 'package:lectly_client_user_mobile/src/widgets/profile_app_bar_widget.dart';
 import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
 
 import '../../utils/authentication.dart';
@@ -55,8 +55,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     var padding = width * 0.06;
-    return Scaffold(
-      body: BackgroundContainer(
+    return BackgroundContainer(
+        appBar: ProfileAppBar(),
         child: Stack(
           children: [
             Positioned(
@@ -65,7 +65,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Appbar(),
                     const SizedBox(
                       height: 32,
                     ),
@@ -155,7 +154,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
           ],
         ),
-      ),
     );
   }
 }

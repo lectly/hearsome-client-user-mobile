@@ -18,8 +18,7 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BackgroundContainer(
+    return BackgroundContainer(
         child: Stack(
           children: [
             const Positioned(
@@ -69,7 +68,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             ),
           ],
         ),
-      ),
     );
   }
 }
