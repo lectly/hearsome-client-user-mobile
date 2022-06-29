@@ -1,12 +1,12 @@
 import 'dart:io';
+
 import 'package:dio/dio.dart';
 
-class PutRequest {
-  Future<Response> request(String url, File file) async {
+class S3Provider {
+  static Dio dio = Dio();
 
-    Dio dio = Dio();
+  static uploadAudio(File file, String url) async {
     var len = file.readAsBytesSync().lengthInBytes;
-
     var response = await dio.put(url,
         data: file.openRead(),
         options: Options(headers: {
@@ -15,7 +15,6 @@ class PutRequest {
           Headers.acceptHeader: "*/*"
         } // set content-length
             ));
-    print(response.statusMessage);
     return response;
   }
 }

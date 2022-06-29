@@ -1,27 +1,21 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/widgets/background_container_widget.dart';
 import 'package:lectly_client_user_mobile/src/widgets/main_app_bar_widget.dart';
-import 'package:lectly_client_user_mobile/src/widgets/mic_button_widget.dart';
+import 'package:lectly_client_user_mobile/src/widgets/record_button_widget.dart';
+import '../../controllers/main.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
   @override
-  _MainScreenState createState() => _MainScreenState();
+  _MainModel createState() => _MainModel();
 }
 
-class _MainScreenState extends State<MainScreen> {
-  final FirebaseAuth auth = FirebaseAuth.instance;
-  List getUserData() {
-    final User? user = auth.currentUser;
-    final String? userName = user?.displayName;
-    final String? userEmail = user?.email;
-    return [userName, userEmail];
-  }
-
+class _MainModel extends State<MainScreen> {
+  // TODO: activate when transcription is done
+  // final MainController _controller = Get.put(MainController());
 
   @override
   Widget build(BuildContext context) {

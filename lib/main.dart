@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
       fallbackLocale: LocalizationService.fallbackLocale,
       translations: LocalizationService(),
       home: const SplashScreen(),
-
     );
   }
 }
