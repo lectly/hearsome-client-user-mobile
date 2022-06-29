@@ -21,11 +21,7 @@ class _MainScreenState extends State<MainScreen> {
     final String? userEmail = user?.email;
     return [userName, userEmail];
   }
-  // Future<String?> get() async {
-  //   final User? user = auth.currentUser;
-  //   final String? token = await user?.getIdToken();
-  //   return (token);
-  // }
+
 
   @override
   Widget build(BuildContext context) {

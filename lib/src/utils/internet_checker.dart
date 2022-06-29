@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/ui/onBoarding/on_boarding.dart';
 
-import '../ui/no_internet/no_internet.dart';
+import '../ui/noInternet/no_internet.dart';
 
 class Internet {
   static Future<bool> checkConnectivity() async {

@@ -29,7 +29,7 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                       height: 60,
                     ),
                     Text(
-                      "no_internet".tr,
+                      "noInternet".tr,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: AppColors.primaryColor,
