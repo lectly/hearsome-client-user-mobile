@@ -6,10 +6,13 @@ import '../providers/s3.dart';
 class MainController extends GetxController {
   final MainProvider _mainProvider = MainProvider();
   final RxString transcription = "".obs;
-  final RxBool isLoading = false.obs;
+  final RxInt screenIdx = 0.obs;
 
   transcribe(File file) async {
-    isLoading.value = true;
+    // Loading state
+    setTranscription("");
+    setScreenIdx(1);
+
     //  GET SIGNED S3 URL
     var response = await _mainProvider.getSignedUrl();
     if (response == null) return;
@@ -25,12 +28,24 @@ class MainController extends GetxController {
 
     //  TRANSCRIBE AUDIO: DEBUG ENDPOINT
     response = await _mainProvider.transcribe();
-    transcription.value = response['result'];
-    transcription.refresh();
+    if (response['result'].toString().isNotEmpty) {
+      // Loading state
+      setTranscription(response['result']);
+      setScreenIdx(2);
+    } else {
+      // Error state
+      setScreenIdx(0);
+    }
   }
 
-  setLoading() {
-    transcription.value = "";
-    isLoading.value = true;
+  setTranscription(String value) {
+    transcription.value = value;
+    update();
+  }
+
+  setScreenIdx(int value) {
+    if (value > 2 || value < 0) screenIdx.value = 0;
+    screenIdx.value = value;
+    update();
   }
 }

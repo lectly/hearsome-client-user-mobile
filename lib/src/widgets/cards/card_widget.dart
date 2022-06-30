@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 
 class CardContainer extends FractionallySizedBox {
-  CardContainer({Key? key})
+  CardContainer({Key? key, required String text})
       : super(
           key: key,
           widthFactor: 1,
+          heightFactor: 0.95,
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 34, vertical: 80),
             padding:
@@ -22,10 +23,10 @@ class CardContainer extends FractionallySizedBox {
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean maximus ipsum sed felis molestie ullamcorper. Donec ante nibh, ullamcorper et faucibus quis, ultricies ut dolor. Proin mattis ex ac turpis dictum, a pretium ante consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempor leo at commodo fringilla. Proin non elit odio. In mollis, magna vel consectetur viverra, diam sem mollis odio, id interdum odio magna ac lorem. Sed at quam vitae nisi facilisis pulvinar.",
-                    style: TextStyle(
+                    text,
+                    style: const TextStyle(
                       color: AppColors.primaryColorDark,
                       height: 1.5,
                       fontFamily: "Cairo",
