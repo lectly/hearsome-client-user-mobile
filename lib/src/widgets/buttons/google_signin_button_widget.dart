@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lectly_client_user_mobile/src/constants/colors.dart';
-import '../ui/main/main.dart';
-import '../utils/authentication.dart';
+import 'package:lectly_client_user_mobile/src/ui/main/main.dart';
+import 'package:lectly_client_user_mobile/src/utils/authentication.dart';
 
 class GoogleSignInButton extends StatefulWidget {
   const GoogleSignInButton({Key? key}) : super(key: key);

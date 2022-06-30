@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../constants/colors.dart';
-import '../utils/localization_service.dart';
+import 'package:lectly_client_user_mobile/src/constants/colors.dart';
+import 'package:lectly_client_user_mobile/src/utils/localization_service.dart';
 
 var languages = LocalizationService.langs.toList();
 var icons = [

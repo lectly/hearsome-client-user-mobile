@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../constants/colors.dart';
 import 'package:get/get.dart';
+import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 
 class LoadingCard extends StatelessWidget {
   const LoadingCard({Key? key}) : super(key: key);
@@ -16,7 +15,7 @@ class LoadingCard extends StatelessWidget {
       content: Container(
         //apply margin and padding using Container Widget.
         padding: const EdgeInsets.fromLTRB(28, 0, 0, 0),
-        child:  Text(
+        child: Text(
           "loading".tr,
           style: const TextStyle(
             color: AppColors.primaryColorDark,

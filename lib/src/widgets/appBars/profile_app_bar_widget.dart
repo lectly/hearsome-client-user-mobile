@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lectly_client_user_mobile/src/widgets/language_button_widget.dart';
-import '../constants/colors.dart';
 import 'package:get/get.dart';
+import 'package:lectly_client_user_mobile/src/constants/colors.dart';
+import 'package:lectly_client_user_mobile/src/widgets/buttons/language_button_widget.dart';
 
 class ProfileAppBar extends AppBar {
   ProfileAppBar({Key? key})

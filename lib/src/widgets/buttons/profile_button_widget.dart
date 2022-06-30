@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../ui/profile/profile.dart';
+import 'package:lectly_client_user_mobile/src/ui/profile/profile.dart';
 
 class ProfileButton extends StatelessWidget {
   const ProfileButton({Key? key}) : super(key: key);
