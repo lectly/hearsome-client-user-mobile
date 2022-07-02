@@ -26,7 +26,8 @@ class _DropDownListState extends State<DropDownList> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/language.png",
+              "assets/images/globe.png",
+              width: 16,
             ),
             const SizedBox(width: 8),
             DropdownButtonHideUnderline(
