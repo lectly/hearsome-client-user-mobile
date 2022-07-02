@@ -15,6 +15,7 @@ class RecordButton extends StatefulWidget {
 class _RecordButtonState extends State<RecordButton> {
   final Recorder _recorder = Recorder();
   final MainController _controller = Get.find();
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -45,9 +46,15 @@ class _RecordButtonState extends State<RecordButton> {
         ),
       ),
       onTapDown: (detail) async {
+        setState(() {
+          _isLoading = true;
+        });
         await _recorder.record();
       },
       onTapUp: (detail) async {
+        setState(() {
+          _isLoading = false;
+        });
         File file = await _recorder.stop();
         _controller.transcribe(file);
       },
