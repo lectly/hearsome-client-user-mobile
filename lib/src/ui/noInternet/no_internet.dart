@@ -4,6 +4,8 @@ import 'package:lectly_client_user_mobile/src/constants/colors.dart';
 import 'package:lectly_client_user_mobile/src/utils/internet_checker.dart';
 import 'package:lectly_client_user_mobile/src/widgets/containers/background_container_widget.dart';
 
+import '../onBoarding/on_boarding.dart';
+
 class NoInternetScreen extends StatefulWidget {
   const NoInternetScreen({Key? key}) : super(key: key);
 
@@ -12,7 +14,7 @@ class NoInternetScreen extends StatefulWidget {
 }
 
 class _NoInternetScreenState extends State<NoInternetScreen> {
-  final Internet internet = Internet();
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -60,21 +62,52 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                     height: 20,
                   ),
                   OutlinedButton(
-                    onPressed: () {
-                      internet.noInternetScreen(context);
+                    onPressed: () async {
+                      setState(() {
+                        isLoading = true;
+                      });
+                      if (!await Internet.checkConnectivity()) {
+                        setState(() {
+                          isLoading = false;
+                        });
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          content:
+                              Text('No Internet Connection! Please Try Again'),
+                        ));
+                      } else {
+                        Navigator.of(context).maybePop().then((popped) {
+                          if (!popped) {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const OnBoardingScreen()));
+                          }
+                        });
+                      }
                     },
-                    child: Text('try_again'.tr),
-                    style: OutlinedButton.styleFrom(
-                      primary: AppColors.primaryColor,
-                      side: const BorderSide(
-                          color: AppColors.primaryColor, width: 1),
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8))),
-                      textStyle: const TextStyle(
-                        color: AppColors.primaryColor,
-                        fontSize: 16,
-                        fontFamily: "Cairo",
-                      ),
+                    child: (isLoading)
+                        ? const CircularProgressIndicator(
+                            color: AppColors.secondaryColor,
+                          )
+                        : Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                border:
+                                    Border.all(color: AppColors.primaryColor)),
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child: Text(
+                              'try_again'.tr,
+                              style: const TextStyle(
+                                color: AppColors.primaryColor,
+                                fontSize: 16,
+                                fontFamily: "Cairo",
+                              ),
+                            )),
+                    style: ElevatedButton.styleFrom(
+                      primary: AppColors.transparent,
+                      side: const BorderSide(color: AppColors.transparent),
                     ),
                   )
                 ],

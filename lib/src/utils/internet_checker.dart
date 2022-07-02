@@ -45,21 +45,4 @@ class Internet {
       }
     });
   }
-
-  noInternetScreen(context) {
-    Internet.checkConnectivity().then((isConnected) {
-      if (isConnected) {
-        Navigator.of(context).maybePop().then((popped) {
-          if (!popped) {
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const OnBoardingScreen()));
-          }
-        });
-      } else {
-        return;
-      }
-    });
-  }
 }
