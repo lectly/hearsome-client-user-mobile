@@ -20,7 +20,6 @@ class MainController extends GetxController {
     // final String signedURL = response['signedURL'];
     // final String objectName = response['objectName'];
     // final String bucketName = response['bucketName'];
-
     // UPLOAD AUDIO TO S3
     // S3Provider.uploadAudio(file, signedURL);
     // final String objectURL =

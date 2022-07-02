@@ -31,11 +31,18 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
+  flutter_launcher_icons: "^0.9.2"
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon.png"
+  adaptive_icon_background: "#5632D0"
+  adaptive_icon_foreground: "assets/images/logo.png"
 
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/logo.png
     - assets/images/v-logo.png
     - assets/images/h-logo.png
     - assets/images/on_boarding.png
