@@ -17,13 +17,13 @@ class MainController extends GetxController {
     var response = await _mainProvider.getSignedUrl();
     if (response == null) return;
     // TODO: when transcribe endpoint is done
-    // final String signedURL = response['signedURL'];
-    // final String objectName = response['objectName'];
-    // final String bucketName = response['bucketName'];
+    final String signedURL = response['signedURL'];
+    final String objectName = response['objectName'];
+    final String bucketName = response['bucketName'];
     // UPLOAD AUDIO TO S3
-    // S3Provider.uploadAudio(file, signedURL);
-    // final String objectURL =
-    //     'https://' + bucketName + '.s3.amazonaws.com/' + objectName;
+    S3Provider.uploadAudio(file, signedURL);
+    final String objectURL =
+        'https://' + bucketName + '.s3.amazonaws.com/' + objectName;
 
     //  TRANSCRIBE AUDIO: DEBUG ENDPOINT
     response = await _mainProvider.transcribe();
