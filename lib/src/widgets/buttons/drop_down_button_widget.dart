@@ -10,7 +10,8 @@ class DropDownList extends StatefulWidget {
 }
 
 class _DropDownListState extends State<DropDownList> {
-  String selectedLanguage = LocalizationService.langs.first;
+  String? selectedLanguage = LocalizationService.langs[LocalizationService.getSelectedLanguageIndex()];
+
   @override
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
@@ -25,7 +26,8 @@ class _DropDownListState extends State<DropDownList> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/language.png",
+              "assets/images/globe.png",
+              width: 16,
             ),
             const SizedBox(width: 8),
             DropdownButtonHideUnderline(
